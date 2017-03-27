@@ -1,0 +1,28 @@
+1、Spring 改进了 Java 资源访问的策略。Spring 为资源访问提供了一个 Resource 接口，该接口提供了更强的资源访问能力，
+	Spring 框架本身大量使用了 Resource 接口来访问底层资源。
+	
+2、Resource 的实现类。Resource 接口是 Spring 资源访问策略的抽象，它本身并不提供任何资源访问实现，
+具体的资源访问由该接口的实现类完成——每个实现类代表一种资源访问策略。
+Spring 为 Resource 接口提供了如下实现类：
+UrlResource：访问网络资源的实现类。
+ClassPathResource：访问类加载路径里资源的实现类。
+FileSystemResource：访问文件系统里资源的实现类。
+ServletContextResource：访问相对于 ServletContext 路径里的资源的实现类：
+InputStreamResource：访问输入流资源的实现类。
+ByteArrayResource：访问字节数组资源的实现类。
+这些 Resource 实现类，针对不同的的底层资源，提供了相应的资源访问逻辑，并提供便捷的包装，以利于客户端程序的资源访问。
+
+3、使用 UrlResource 访问网络资源
+访问网络资源通过 UrlResource 类实现，UrlResource 是 java.net.URL 类的包装，
+主要用于访问之前通过 URL 类访问的资源对象。URL 资源通常应该提供标准的协议前缀。
+例如：file: 用于访问文件系统；http: 用于通过 HTTP 协议访问资源；ftp: 用于通过 FTP 协议访问资源等。
+
+4、访问 ApplicationContext 的配置文件
+	不管以怎样的方式创建 ApplicationContext 实例，都需要为 ApplicationContext 指定配置文件，
+	Spring 允许使用一份或多份 XML 配置文件。
+	当程序创建 ApplicationContext 实例化时，通常也是以 Resource 的方式来访问配置文件的所以 ApplicationContext 完全支持 ClassPathResource，FileSystemResource，
+	ServletContextResouce 等资源访问方式。
+	
+	ApplicationContext 确定资源访问策略通常有两个方法：
+	ApplicationContext 实现类指定访问策略。
+	前缀指定访问策略。

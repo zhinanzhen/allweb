@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+   <typeAliases>
+   		 <!-- 这个别名非常重要，你在 具体的类的映射中，比如User.xml 中 resultType 就是对应这里的,
+   		 	  当然如果使用“包名+实体”也可不使用此配置文件
+   		  -->
+        <typeAlias alias="User" type="com.obj.project.mybatis.user.bean.User"/>
+        <typeAlias alias="Article" type="com.obj.project.mybatis.article.bean.Article"/>
+    </typeAliases>
+</configuration>

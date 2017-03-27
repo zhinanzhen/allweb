@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 应该分为多个服务器存放，有专门的memcached存参数 
+	default为前端主机访问地址，使用nginx只有一个地址，后面需要根据业务配置
+	文件夹地址-->
+<params>
+<imageServers>
+	<imageServer name="default" path="http://192.168.3.125:8888/" />
+</imageServers>
+
+<categoryTree deepth="3">
+	
+</categoryTree>
+</params>

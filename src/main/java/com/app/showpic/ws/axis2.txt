@@ -1,0 +1,23 @@
+一、服务端
+1、添加axis2的相关jar
+2、WEB-INF 下添加axis2的相关文件
+3、web.xml中添加
+	<servlet>
+        <servlet-name>AxisServlet</servlet-name>
+        <servlet-class>org.apache.axis2.transport.http.AxisServlet</servlet-class>
+        <load-on-startup>2</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AxisServlet</servlet-name>
+        <url-pattern>/services/*</url-pattern>
+    </servlet-mapping>
+4、注意在axis2.xml中的pojo   
+	src/main/webapp/WEB-INF/pojo
+
+	
+二、客户端
+	客户端调用webservice有三种方式
+	1、使用wsdl2java生成stub，这是在配置好axis2的环境变量的情况下可以使用
+		wsdl2java -uri http://127.0.0.1:8080/all_web/services/TestWebService?wsdl -s -o ws -p com.app.showpic.ws.client
+	2、不生成客户端，使用RPCServiceClient的invokeBlocking方式调用
+	3、解析xml方式
