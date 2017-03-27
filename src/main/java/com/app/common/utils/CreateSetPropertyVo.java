@@ -5,7 +5,7 @@ import java.beans.IntrospectionException;
 import java.beans.Introspector;
 import java.beans.PropertyDescriptor;
 
-import com.design_pattern.adapter.cls.Person;
+import com.app.showpic.register.bean.User;
 
 /**
  * 生成set属性方法
@@ -15,13 +15,13 @@ import com.design_pattern.adapter.cls.Person;
 public class CreateSetPropertyVo {
 	public static void main(String[] args) throws IntrospectionException {
 		// 需要更改需要生成set属性方法的类名======== ？ 
-		BeanInfo beanInfo = Introspector.getBeanInfo(Person.class,Object.class);
+		BeanInfo beanInfo = Introspector.getBeanInfo(User.class,Object.class);
 		PropertyDescriptor[] propertyDescriptors = beanInfo.getPropertyDescriptors();
 		if (propertyDescriptors != null && propertyDescriptors.length > 0) {
 			for (PropertyDescriptor propertyDescriptor : propertyDescriptors) {
 				if(propertyDescriptor.getWriteMethod() != null){
 					// 需要更改引用名称=========？
-					System.out.println("queryBalanceVo."+propertyDescriptor.getWriteMethod().getName()+"();");
+					System.out.println("user."+propertyDescriptor.getWriteMethod().getName()+"();");
 				}
 			}
 		}
