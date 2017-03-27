@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 public class User implements Serializable {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 3941740210014427004L;
 	private int userId;      //用户Id
 	private String userCode; //用户编码：登陆号
 	private String userPwd; //登陆密码
@@ -95,5 +95,17 @@ public class User implements Serializable {
 	public void setState(String state) {
 		this.state = state;
 	}
-
+	@Override
+	public String toString() {
+		return "userId[" + this.userId +
+		"],userCode[" + this.userCode +
+		"],userPwd[" + this.userPwd +
+		"],userName[" + this.userName +
+		"],sex[" + this.sex +
+		"],userDesc[" + this.userDesc +
+		"],email[" + this.email +
+		"],phone[" + this.phone +
+		"],createDate[" + this.createDate +
+		"],state[" + this.state ;
+	}
 }
