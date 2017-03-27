@@ -56,6 +56,7 @@ public class AllTest extends TestCase {
 	private static final String WINDOWS_FOLDER_SEPARATOR = "\\";
 	public void test_40(){
 		System.out.println(3/2.0);
+		
 	}
 	public void test_39(){
 		int h = 32768;
