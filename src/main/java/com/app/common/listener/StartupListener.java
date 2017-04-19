@@ -10,7 +10,6 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
-import org.apache.log4j.Logger;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;
@@ -22,7 +21,6 @@ import com.alisoft.xplatform.asf.cache.memcached.CacheUtil;
 import com.alisoft.xplatform.asf.cache.memcached.MemcachedCacheManager;
 
 public class StartupListener implements ServletContextListener {
-	private static final Logger logger = Logger.getLogger(StartupListener.class);
 	private ICacheManager<IMemcachedCache> manager;
 	public static final String MANAGER = "manager";
 
