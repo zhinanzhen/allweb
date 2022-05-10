@@ -13,9 +13,12 @@ public class Client {
 		BusinessBar pbar = (BusinessBar)BusiProxy.factory(bar);
 		String reBar = pbar.bar("123");
 		System.out.println(reBar);
+
+		String reBar2 = pbar.bar2("13");
+		System.out.println(reBar2);
 		
-		BusinessFoo foo = new BusinessFooImpl();
-		BusinessFoo pfoo = (BusinessFoo) BusiProxy.factory(foo);
-		pfoo.foo();
+//		BusinessFoo foo = new BusinessFooImpl();
+//		BusinessFoo pfoo = (BusinessFoo) BusiProxy.factory(foo);
+//		pfoo.foo();
 	}
 }

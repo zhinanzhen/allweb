@@ -1,11 +1,10 @@
 package com.app.common.memcached;
 
-import javax.servlet.ServletContext;
-
+import com.alisoft.xplatform.asf.cache.IMemcachedCache;
 import org.springframework.web.context.ContextLoader;
 import org.springframework.web.context.WebApplicationContext;
 
-import com.alisoft.xplatform.asf.cache.IMemcachedCache;
+import javax.servlet.ServletContext;
 
 public class MemcachedUtils {
 	private static ServletContext servletContext;

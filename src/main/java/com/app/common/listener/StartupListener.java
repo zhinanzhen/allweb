@@ -27,14 +27,12 @@ public class StartupListener implements ServletContextListener {
 	private static Map<String, String> unmodifybelImageServerMap = null;
 	private static int treeDeepth = 3;
 
-	@Override
 	public void contextDestroyed(ServletContextEvent event) {
 		if (manager != null) {
 			manager.stop();
 		}
 	}
 
-	@Override
 	public void contextInitialized(final ServletContextEvent event) {
 		class StartupConfig {
 			private static final String START_UP_CONFIG_FILE_NAME = "startupConfig.xml";
@@ -103,8 +101,8 @@ public class StartupListener implements ServletContextListener {
 			}
 
 		}
-		StartupConfig config = new StartupConfig();
-		config.initMemcached();
+//		StartupConfig config = new StartupConfig();
+//		config.initMemcached();
 
 //		config.readConfigration();
 

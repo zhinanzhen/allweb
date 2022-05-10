@@ -1,28 +1,20 @@
 package com.app.quartz.core;
 
-import java.util.List;
-
-import org.apache.log4j.Logger;
-import org.quartz.CronScheduleBuilder;
-import org.quartz.CronTrigger;
-import org.quartz.JobDetail;
-import org.quartz.JobKey;
-import org.quartz.Scheduler;
-import org.quartz.SchedulerException;
-import org.quartz.TriggerBuilder;
-import org.quartz.TriggerKey;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean;
-import org.springframework.scheduling.quartz.SchedulerFactoryBean;
-import org.springframework.stereotype.Service;
-
 import com.app.common.utils.SpringContextUtil;
 import com.app.common.utils.ValidateUtils;
 import com.app.quartz.bean.ScheduleJob;
 import com.app.quartz.service.ScheduleService;
 import com.app.quartz.vo.ResultVo;
+import org.apache.log4j.Logger;
+import org.quartz.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean;
+import org.springframework.scheduling.quartz.SchedulerFactoryBean;
+import org.springframework.stereotype.Service;
 
-@Service
+import java.util.List;
+
+//@Service
 public class ScheduleJobFactory {
 	private static final Logger logger = Logger.getLogger(ScheduleJobFactory.class);
 	@Autowired
@@ -110,9 +102,7 @@ public class ScheduleJobFactory {
 		Scheduler scheduler = schedulerFactoryBean.getScheduler();
 		try {
 			createJobDetail(scheduler, job);
-		} catch (InstantiationException | IllegalAccessException
-				| ClassNotFoundException | NoSuchMethodException
-				| SchedulerException e) {
+		} catch (Exception e) {
 			logger.info("创建新定时失败，" + e.getMessage());
 			vo.setFailReason("创建新定时失败，原因：" + e.getMessage());
 			return vo;

@@ -12,12 +12,12 @@ public class Join {
 		MyTask myTask = join.new MyTask();
 		Thread thread = new Thread(myTask);
 		thread.start();
-		try {
-			System.out.println("线程"+Thread.currentThread().getName()+"等待");
-			thread.join();//等待thread线程执行完毕或者等待一定的时间
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+//		try {
+//			System.out.println("线程"+Thread.currentThread().getName()+"等待");
+//			thread.join();//等待thread线程执行完毕或者等待一定的时间
+//		} catch (InterruptedException e) {
+//			e.printStackTrace();
+//		}
 		System.out.println("线程"+Thread.currentThread().getName()+"继续");
 	}
 	class MyTask implements Runnable{

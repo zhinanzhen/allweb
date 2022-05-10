@@ -2,8 +2,40 @@ package com;
 
 
 public class Test {
-	public static void main(String[] args) {
-		toString(45);
+	private static final int COUNT_BITS = Integer.SIZE - 3;
+	private static final int CAPACITY   = (1 << COUNT_BITS) - 1;
+
+	// runState is stored in the high-order bits
+	private static final int RUNNING    = -1 << COUNT_BITS;
+	private static final int SHUTDOWN   =  0 << COUNT_BITS;
+	private static final int STOP       =  1 << COUNT_BITS;
+	private static final int TIDYING    =  2 << COUNT_BITS;
+	private static final int TERMINATED =  3 << COUNT_BITS;
+	static int a ;
+
+	public Test(){
+		System.out.println("333333333333");
+	}
+
+
+	public static void main(String[] args) throws Exception{
+		System.out.println((RUNNING | 0) & CAPACITY);
+//		System.out.println(Class.forName("com.JsonHelper",true,Thread.currentThread().getClass().getClassLoader()));
+	}
+
+	public static void t(int a ){
+		String s = "abcdefghijklmnopqrstuvwsyz";
+		StringBuffer sb = new StringBuffer("");
+		while(a > 0){
+			int i = a % 26;
+//			if(){}
+			sb.append(s.charAt(i));
+			i = a / 26;
+		}
+	}
+
+	public static void t16(int a){
+
 	}
 	
 	 public static String toString(long i) {

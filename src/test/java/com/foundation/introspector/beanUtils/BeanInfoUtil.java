@@ -24,7 +24,7 @@ public class BeanInfoUtil {
 		System.out.println("set value:" + userInfo.getUserName());
 	}
 
-	public static void getProperty(UserInfo userInfo, String userName)throws Exception {
+	public static void getProperty(Object userInfo, String userName)throws Exception {
 		PropertyDescriptor proDes = new PropertyDescriptor(userName,userInfo.getClass());
 		Method readMethod = proDes.getReadMethod();
 		Object value = readMethod.invoke(userInfo);

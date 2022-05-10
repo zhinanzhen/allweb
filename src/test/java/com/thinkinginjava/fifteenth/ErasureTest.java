@@ -8,8 +8,8 @@ import com.thinkinginjava.fifteenth.coffee.Coffee;
 
 public class ErasureTest{
 	public static void main(String[] args) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException {
-		Erasure<Coffee> er = new Erasure<>(Coffee.class);
-		Erasure<Coffee> er2 = new Erasure<>(Coffee.class);
+		Erasure<Coffee> er = new Erasure<Coffee>(Coffee.class);
+		Erasure<Coffee> er2 = new Erasure<Coffee>(Coffee.class);
 		System.out.println(er.getClass()==er2.getClass());
 		Coffee c = new Coffee();
 		Coffee c2 = new Coffee();

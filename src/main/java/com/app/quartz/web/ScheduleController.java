@@ -13,9 +13,9 @@ import org.springframework.web.servlet.ModelAndView;
 import com.app.common.utils.AjaxTool;
 import com.app.quartz.bean.ScheduleJob;
 import com.app.quartz.service.ScheduleService;
-
-@Controller
-@RequestMapping("schedule/")
+//
+//@Controller
+//@RequestMapping("schedule/")
 public class ScheduleController {
 	@Autowired
 	private ScheduleService scheduleService;

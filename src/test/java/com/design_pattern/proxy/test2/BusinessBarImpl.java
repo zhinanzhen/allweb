@@ -8,4 +8,9 @@ public class BusinessBarImpl implements BusinessBar{
 		return message;
 	}
 
+	@Override
+	public String bar2(String message) {
+		System.out.println("bar2:" + message);
+		return message;
+	}
 }

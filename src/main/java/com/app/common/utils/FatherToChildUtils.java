@@ -1,9 +1,7 @@
 package com.app.common.utils;
 
-import java.beans.IntrospectionException;
 import java.beans.PropertyDescriptor;
 import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 /**
@@ -35,7 +33,7 @@ public class FatherToChildUtils{
 					Method setter = cpd.getWriteMethod();
 	    			Object value = getter.invoke(father);
 	    			setter.invoke(child, value);
-				} catch (IntrospectionException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
+				} catch (Exception e) {
 					e.printStackTrace();
 				}
              }

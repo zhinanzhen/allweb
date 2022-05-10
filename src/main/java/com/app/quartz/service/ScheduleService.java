@@ -13,7 +13,7 @@ import com.app.quartz.core.ScheduleJobFactory;
 import com.app.quartz.dao.ScheduleMapper;
 import com.app.quartz.vo.ResultVo;
 
-@Service
+//@Service
 public class ScheduleService {
 	@Autowired
 	private ScheduleJobFactory scheduleJobFactory;

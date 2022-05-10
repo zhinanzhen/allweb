@@ -339,7 +339,7 @@ public class StringUtil {
 	
 	/**
 	 * 获得千分位格式的金额
-	 * @param str
+	 * @param amount
 	 * @return
 	 */
 	public static String getStringToQfw(String amount){

@@ -33,15 +33,15 @@
 	<listener>
 		<listener-class>com.app.common.listener.StartupListener</listener-class>
 	</listener>
-	<!-- <listener>
+	<listener>
 		<listener-class>com.app.common.listener.MemcachedListener</listener-class>
-	</listener> -->
-	<!-- <listener>
+	</listener>
+	<listener>
 		<listener-class>com.app.common.listener.TeatListener</listener-class>
 	</listener>
 	<listener>
 		<listener-class>com.app.common.listener.TestListener</listener-class>
-	</listener> -->
+	</listener>
 	<!-- 字符集过滤器 -->
 	<filter>
 		<filter-name>EncodingFilter</filter-name>
@@ -76,8 +76,8 @@
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
 			/WEB-INF/config/applicationContext.xml,
-			/WEB-INF/config/scheduleContest-task.xml,
-			classpath:applicationContext-hessian.xml
+			<!--/WEB-INF/config/scheduleContest-task.xml,
+			classpath:applicationContext-hessian.xml-->
 		</param-value>
 	</context-param>
 	
